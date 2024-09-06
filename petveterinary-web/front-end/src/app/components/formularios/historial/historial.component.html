@@ -1,133 +1,144 @@
-<div class="container-form registro">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-form registro">
 
 
 
-    <div class="form-information">
-        <div class="form-information-childs">
-            <h3>Registro del Historial Medico</h3>
-
-
-            <form class="form formRegister" novalidate autocomplete="on">
-
-                <div class="columna izquierda">
-                    <div>
-                        <label>
-                            <i class="fas fa-paw"></i>
-                            ID Mascota:
-                            <input width="50px" type="text" placeholder="ID Mascota" name="mascotaID" id="mascotaID"
-                                autocomplete="on">
-                        </label>
-                    </div>
-
-                    <div>
-                        <label>
-                            <i class="fas fa-user"></i>
-                            ID Cliente:
-                            <input width="50px" type="text" placeholder="ID Cliente" name="clienteID" id="clienteID"
-                                autocomplete="on">
-                        </label>
-                    </div>
-
-                    <div class="form-information-childs">
-
-                        <div class="icons">
-                            <i class="fa fa-stethoscope"></i>
-                        </div>
-
-                    </div>
-
-
-                    <div>
-                        <h5>Tratamientos Previos</h5>
-
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h3>Registro del Historial Medico</h3>
+    
+    
+                <form class="form formRegister" novalidate autocomplete="on">
+    
+                    <div class="columna izquierda">
                         <div>
                             <label>
-                                <i class="fa fa-heartbeat"></i>
-                                <input type="text" placeholder="TipoTratamiento" name="TipoTratamiento"
-                                    id="TipoTratamiento" autocomplete="on">
-                            </label>
-                            <label>
-                                <i class="fa fa-heartbeat"></i>
-                                <input type="text" placeholder="Descripción" name="descripcionTratamiento"
-                                    id="descripcionTratamiento" autocomplete="on">
-                            </label>
-                            <label>
-                                <i class="fa-regular fa-calendar"></i>
-                                <input type="text" placeholder="Fecha del Tratamiento" name="dateTratamiento"
-                                    id="dateTratamiento" autocomplete="on">
-                            </label>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="columna derecha">
-                    <div>
-                        <h5>Vacunas</h5>
-
-                        <div>
-                            <label>
-                                <i class="fa-solid fa-flask"></i>
-                                <input type="text" placeholder="Nombre de Vacuna" name="TipoTratamiento"
-                                    id="TipoTratamiento" autocomplete="on">
-                            </label>
-
-                            <label>
-                                <i class="fa-regular fa-calendar"></i>
-                                <input type="text" placeholder="Fecha del Tratamiento" name="dateTratamiento"
-                                    id="dateTratamiento" autocomplete="on">
-                            </label>
-
-                        </div>
-                        <button type="button"><i class="fa fa-plus-circle" style="background-color: 3ed98f;"></i>Agregar
-                            Vacuna</button>
-                    </div>
-
-                    <div class="form-information-childs">
-
-                        <div class="icons">
-                            <i class="fa fa-id-card-o"></i>
-                        </div>
-
-                    </div>
-
-                    <div>
-                        <h5>Visitas</h5>
-
-                        <div>
-                            <label>
-                                <i class="fa fa-heartbeat"></i>
-                                <input type="text" placeholder="Motivo de la Visita" name="motivoVisita"
-                                    id="motivoVisita" autocomplete="on">
-                            </label>
-                            <label>
-                                <i class="fa fa-heartbeat"></i>
-                                <input type="text" placeholder="Hallazgos Encontrados" name="hallazgoVisita"
-                                    id="hallazgoVisita" autocomplete="on">
-                            </label>
-                            <label>
-                                <i class="fa-regular fa-calendar"></i>
-                                <input type="text" placeholder="Fecha de Visita" name="dateVisita" id="dateVisita"
+                                <i class="fas fa-paw"></i>
+                                ID Mascota:
+                                <input width="50px" type="text" placeholder="ID Mascota" name="mascotaID" id="mascotaID"
                                     autocomplete="on">
                             </label>
-
                         </div>
-
+    
+                        <div>
+                            <label>
+                                <i class="fas fa-user"></i>
+                                ID Cliente:
+                                <input width="50px" type="text" placeholder="ID Cliente" name="clienteID" id="clienteID"
+                                    autocomplete="on">
+                            </label>
+                        </div>
+    
+                        <div class="form-information-childs">
+    
+                            <div class="icons">
+                                <i class="fa fa-stethoscope"></i>
+                            </div>
+    
+                        </div>
+    
+    
+                        <div>
+                            <h5>Tratamientos Previos</h5>
+    
+                            <div>
+                                <label>
+                                    <i class="fa fa-heartbeat"></i>
+                                    <input type="text" placeholder="TipoTratamiento" name="TipoTratamiento"
+                                        id="TipoTratamiento" autocomplete="on">
+                                </label>
+                                <label>
+                                    <i class="fa fa-heartbeat"></i>
+                                    <input type="text" placeholder="Descripción" name="descripcionTratamiento"
+                                        id="descripcionTratamiento" autocomplete="on">
+                                </label>
+                                <label>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <input type="text" placeholder="Fecha del Tratamiento" name="dateTratamiento"
+                                        id="dateTratamiento" autocomplete="on">
+                                </label>
+    
+                            </div>
+    
+                        </div>
+    
                     </div>
-
-
-                </div>
-
-                <input type="submit" value="Guardar Historial" style="background-color: 3ed98f;" id="btn-guardarVet">
-
-                <div class="alerta-error">Todos los campos son obligatorios - Verifique sus datos</div>
-                <div class="alerta-exito">Tu registro fue exitoso</div>
-
-
-            </form>
+    
+    
+                    <div class="columna derecha">
+                        <div>
+                            <h5>Vacunas</h5>
+    
+                            <div>
+                                <label>
+                                    <i class="fa-solid fa-flask"></i>
+                                    <input type="text" placeholder="Nombre de Vacuna" name="TipoTratamiento"
+                                        id="TipoTratamiento" autocomplete="on">
+                                </label>
+    
+                                <label>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <input type="text" placeholder="Fecha del Tratamiento" name="dateTratamiento"
+                                        id="dateTratamiento" autocomplete="on">
+                                </label>
+    
+                            </div>
+                            <button type="button"><i class="fa fa-plus-circle" style="background-color: 3ed98f;"></i>Agregar
+                                Vacuna</button>
+                        </div>
+    
+                        <div class="form-information-childs">
+    
+                            <div class="icons">
+                                <i class="fa fa-id-card-o"></i>
+                            </div>
+    
+                        </div>
+    
+                        <div>
+                            <h5>Visitas</h5>
+    
+                            <div>
+                                <label>
+                                    <i class="fa fa-heartbeat"></i>
+                                    <input type="text" placeholder="Motivo de la Visita" name="motivoVisita"
+                                        id="motivoVisita" autocomplete="on">
+                                </label>
+                                <label>
+                                    <i class="fa fa-heartbeat"></i>
+                                    <input type="text" placeholder="Hallazgos Encontrados" name="hallazgoVisita"
+                                        id="hallazgoVisita" autocomplete="on">
+                                </label>
+                                <label>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <input type="text" placeholder="Fecha de Visita" name="dateVisita" id="dateVisita"
+                                        autocomplete="on">
+                                </label>
+    
+                            </div>
+    
+                        </div>
+    
+    
+                    </div>
+    
+                    <input type="submit" value="Guardar Historial" style="background-color: 3ed98f;" id="btn-guardarVet">
+    
+                    <div class="alerta-error">Todos los campos son obligatorios - Verifique sus datos</div>
+                    <div class="alerta-exito">Tu registro fue exitoso</div>
+    
+    
+                </form>
+            </div>
         </div>
     </div>
-</div>
+    
+</body>
+</html>
