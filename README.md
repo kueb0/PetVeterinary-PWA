@@ -10,4 +10,6 @@ Agendar citas que solo el personal administrativo pueda registrar dentro del sis
 
 *Itzel Alessandra Fuentes Cabrera*  - Developer - [ItzelFuentes](http://github.com/ItzelFuentes)
 
+*Ana Isabel Jasso Velázquez*  - Developer - (https://github.com/javajasso)
+
 
