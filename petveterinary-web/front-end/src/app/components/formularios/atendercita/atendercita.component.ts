@@ -6,6 +6,7 @@ import { Cita } from 'src/app/models/cita';
 import { VeterinarioSesion } from 'src/app/models/veterinarioSesion';
 import { CitasVeterinarioService } from 'src/app/services/citasVeterinario.service';
 import { VeterinarioSesionService } from 'src/app/services/veterinarioSesion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-atendercita',
@@ -82,14 +83,34 @@ export class AtendercitaComponent implements OnInit{
       this.citasVeterinarioService.actualizarCita(formData._id, formData).subscribe(
         (response) => {
           console.log('Cita actualizada exitosamente', response);
+          this.showCorrectPopup();
+         
         },
         (error) => {
           console.error('Error al actualizar la cita:', error);
+          this.showErrorPopup();
         }
       );
     } else {
       console.log('El formulario no es válido.');
     }
+  }
+
+  
+  showErrorPopup() {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Parece que hubo un error al actualizar la cita!"
+    });
+  }
+
+  showCorrectPopup() {
+    Swal.fire({
+      title: "Excelente!",
+      text: "Se ha actualizado la cita!",
+      icon: "success"
+    });
   }
 
 }
