@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cita } from 'src/app/models/cita';
 import { VeterinarioSesion } from 'src/app/models/veterinarioSesion';
 import { CitasVeterinarioService } from 'src/app/services/citasVeterinario.service';
@@ -27,6 +27,7 @@ export class AtendercitaComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder, 
+    private router: Router,
     private citasVeterinarioService: CitasVeterinarioService,
     private route: ActivatedRoute
   ) { 
@@ -84,11 +85,14 @@ export class AtendercitaComponent implements OnInit{
         (response) => {
           console.log('Cita actualizada exitosamente', response);
           this.showCorrectPopup();
+          this.router.navigate(['/VeterinarioSesion']);
          
         },
         (error) => {
           console.error('Error al actualizar la cita:', error);
           this.showErrorPopup();
+          this.router.navigate(['/VeterinarioSesion']);
+
         }
       );
     } else {
