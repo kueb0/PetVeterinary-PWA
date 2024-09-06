@@ -1,0 +1,45 @@
+<div class="container-form registro">
+    <div class="form-information">
+        <div class="form-information-childs">
+            <h3>Registro de Veterinarios</h3>
+            <div class="icons">
+                <i class="fas fa-user"></i>
+            </div>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="form formRegister" novalidate autocomplete="on">
+                <div>
+                    <label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" formControlName="nombre" placeholder="Nombre Veterinario" name="vetName" id="vetName" autocomplete="on">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" formControlName="telefono" placeholder="Teléfono" name="veterinarioTel" id="veterinarioTel" autocomplete="on">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" formControlName="email" placeholder="Correo Electrónico" name="vetEmail" id="vetEmail" autocomplete="on">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <i class="fas fa-lock"></i>
+                        <input type="password" formControlName="contrasenia" placeholder="Contraseña" name="vetPassword" id="vetPassword">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" formControlName="cedulaProfesional" placeholder="Cedula Profesional" name="cedulaVet" id="cedulaVet" autocomplete="on">
+                    </label>
+                </div>
+                <input type="submit" value="Guardar Veterinario" style="background-color: #3ed98f;" id="btn-guardarVet">
+                <div class="alerta-error">Todos los campos son obligatorios - Verifique sus datos</div>
+                <div class="alerta-exito">Tu registro fue exitoso</div>
+            </form>
+        </div>
+    </div>
+</div>

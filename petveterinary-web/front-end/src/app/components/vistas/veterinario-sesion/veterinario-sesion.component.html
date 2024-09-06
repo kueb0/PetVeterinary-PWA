@@ -1,0 +1,87 @@
+
+
+<div class="wrapper">
+    <div class="boton" *ngIf="!loader && vet">
+        <div class="items">
+            <h3>Datos de Veterinario</h3>
+            <h2 class="card-title">{{vet?.nombre}}</h2>
+            <span class="card-description">{{vet?.cedulaProfesional}}</span>
+        </div>
+    </div>
+    <div *ngIf="loader">Cargando...</div>
+
+    <div *ngIf="!vet && !loader">No se encontraron datos.</div>
+    <div *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </div>
+   
+
+    
+ 
+
+  <div class="containerCitasP" *ngIf="!loader">
+    <h3>Citas Proximas</h3>
+
+    <table *ngIf="citasA.length">
+        <thead>
+            <tr>
+                <th>Fecha de Cita</th>
+                <th>Hora de Cita</th>
+                <th>Estatus de Cita</th>
+                <th>Motivo de la Consulta</th>
+                <th><i class="fa-solid fa-flask"></i></th>
+                <th><i class="fa-solid fa-flask"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let cita of citasP">
+                <td>{{ cita.fecha | date:'shortDate' }}</td>
+                <td>{{ cita.hora }}</td>
+                <td>{{ cita.estatus }}</td>
+                <td>{{ cita.motivo }}</td>
+                <td><a  [routerLink]="['/Historial', cita._id]" class="card-button">Ver Historial</a></td>
+                <td><a [routerLink]="['/AtenderCita', cita._id]" class="card-button">Atender Cita</a></td>
+
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+<div *ngIf="loader">Cargando...</div>
+<div *ngIf="citasA.length === 0">No hay citas disponibles.</div>
+  
+  <!-- Mensaje de carga -->
+  <div *ngIf="loader">Cargando...</div>
+  
+  
+  <div *ngIf="loader">Cargando...</div>
+
+    <!-- LISTADO DE CITAS ANTERIORES -->
+    <div class="containerCitasA" *ngIf="!loader">
+        <h3>Citas Anteriores</h3>
+
+        <table *ngIf="citasA.length">
+            <thead>
+                <tr>
+                    <th>Fecha de Cita</th>
+                    <th>Hora de Cita</th>
+                    <th>Estatus de Cita</th>
+                    <th>Motivo de la Consulta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let cita of citasA">
+                    <td>{{ cita.fecha | date:'shortDate' }}</td>
+                    <td>{{ cita.hora }}</td>
+                    <td>{{ cita.estatus }}</td>
+                    <td>{{ cita.motivo }}</td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="loader">Cargando...</div>
+    <div *ngIf="citasA.length === 0">No hay citas disponibles.</div>
+</div>
+
+

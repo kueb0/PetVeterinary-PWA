@@ -1,0 +1,75 @@
+<form (ngSubmit)="onSubmit()" #mascotaForm="ngForm">
+    <div>
+      <label for="nombreMascota">Nombre de la Mascota:</label>
+      <input type="text" id="nombreMascota" required [(ngModel)]="mascota.nombreMascota" name="nombreMascota">
+    </div>
+  
+    <div>
+      <label for="sexo">Sexo:</label>
+      <select id="sexo" required [(ngModel)]="mascota.sexo" name="sexo">
+        <option value="Macho">Macho</option>
+        <option value="Hembra">Hembra</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" required [(ngModel)]="mascota.edad" name="edad">
+    </div>
+  
+    <div>
+      <label for="especie">Especie:</label>
+      <select id="especie" required [(ngModel)]="mascota.especie" name="especie" (change)="onEspecieChange($event)">
+        <option value="Perro">Perro</option>
+        <option value="Gato">Gato</option>
+        <option value="Ave">Ave</option>
+        <option value="Reptil">Reptil</option>
+        <option value="Roedor">Roedor</option>
+      </select>
+    </div>
+  
+    <!-- Campos específicos de cada tipo de mascota -->
+    <div *ngIf="mascota.especie === 'Perro'">
+      <label for="raza">Raza:</label>
+      <input type="text" id="raza" required [(ngModel)]="mascota.raza" name="raza">
+      <label for="tamano">Tamaño:</label>
+      <input type="text" id="tamano" required [(ngModel)]="mascota.tamano" name="tamano">
+    </div>
+  
+    <div *ngIf="mascota.especie === 'Gato'">
+      <label for="razaGato">Raza:</label>
+      <input type="text" id="razaGato" required [(ngModel)]="mascota.razaGato" name="razaGato">
+      <label for="esDomestico">Es Doméstico:</label>
+      <input type="checkbox" id="esDomestico" [(ngModel)]="mascota.esDomestico" name="esDomestico">
+    </div>
+  
+    <div *ngIf="mascota.especie === 'Ave'">
+      <label for="tipoDeAve">Tipo de Ave:</label>
+      <input type="text" id="tipoDeAve" required [(ngModel)]="mascota.tipoDeAve" name="tipoDeAve">
+      <label for="puedeVolar">Puede Volar:</label>
+      <input type="checkbox" id="puedeVolar" [(ngModel)]="mascota.puedeVolar" name="puedeVolar">
+    </div>
+  
+    <div *ngIf="mascota.especie === 'Reptil'">
+      <label for="tipoDeReptil">Tipo de Reptil:</label>
+      <input type="text" id="tipoDeReptil" required [(ngModel)]="mascota.tipoDeReptil" name="tipoDeReptil">
+      <label for="esVenenoso">Es Venenoso:</label>
+      <input type="checkbox" id="esVenenoso" [(ngModel)]="mascota.esVenenoso" name="esVenenoso">
+    </div>
+  
+    <div *ngIf="mascota.especie === 'Roedor'">
+      <label for="tipoDeRoedor">Tipo de Roedor:</label>
+      <input type="text" id="tipoDeRoedor" required [(ngModel)]="mascota.tipoDeRoedor" name="tipoDeRoedor">
+      <label for="esDomestico">Es Doméstico:</label>
+      <input type="checkbox" id="esDomestico" [(ngModel)]="mascota.esDomestico" name="esDomestico">
+    </div>
+  
+    <div>
+      <label for="foto">Foto (URL):</label>
+      <input type="text" id="foto" required [(ngModel)]="mascota.foto" name="foto">
+    </div>
+  
+    <!-- El ID del Cliente se manejará automáticamente -->
+    <button type="submit">Guardar Mascota</button>
+  </form>
+  

@@ -1,0 +1,142 @@
+<div class="container-form registro">
+    <div class="form-information" style="width: 100% !important;">
+        <div class="form-information-childs">
+            <h3>Registrar a mi mascota</h3>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="form formRegister" novalidate
+                autocomplete="on">
+                <div class="columna izquierda">
+                    <div class="form-information-childs">
+                        <div class="icons">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Datos de la mascota</h5>
+                        <div>
+                            <label>
+                                <i class="fa fa-heartbeat"></i>
+                                <input formControlName="nombreMascota" type="text" placeholder="Nombre"
+                                    name="TipoTratamiento" id="TipoTratamiento" autocomplete="on">
+                            </label>
+                            <label>
+                                <i class="fa fa-heartbeat"></i>
+                                    <select id="sexo" formControlName="sexo" id="descripcionTratamiento">
+                                        <option value="">Selecciona un sexo</option>
+                                        <option value="Macho">Macho</option>
+                                        <option value="Hembra">Hembra</option>
+                                    </select>
+                            </label>
+                            <label>
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="text" formControlName="edad" placeholder="Edad" name="dateTratamiento"
+                                    id="dateTratamiento" autocomplete="on">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="columna derecha">
+                    <div>
+                        <div class="form-information-childs">
+                            <div class="icons">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                        </div>
+                        <h5>Info</h5>
+                        <div>
+                            <label>
+                                <i class="fa-solid fa-flask"></i>
+                                <div>
+                                    <label for="especie">Especie</label>
+                                    <select id="especie" formControlName="especie" (change)="onEspecieChange($event)">
+                                        <option value="">Selecciona una especie</option>
+                                        <option value="Perro">Perro</option>
+                                        <option value="Ave">Ave</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Roedor">Roedor</option>
+                                        <option value="Reptil">Reptil</option>
+                                    </select>
+                                </div>
+
+                                <div *ngIf="isPerro">
+                                    <label for="raza">Raza:</label>
+                                    <input id="raza" formControlName="raza" />
+                                </div>
+
+                                <div *ngIf="isPerro">
+                                    <label for="raza">Tamaño:</label>
+                                    <input id="raza" formControlName="tamaño" />
+                                </div>
+
+                                <!-- Campo adicional para Ave -->
+                                <div *ngIf="isAve">
+                                    <label for="tipoDeAve">Tipo de Ave:</label>
+                                    <input id="tipoDeAve" formControlName="tipoDeAve" />
+                                </div>
+                                <div *ngIf="isAve">
+                                    <label for="puedeVolar">¿Puede volar?</label>
+                                    <select id="puedeVolar" formControlName="puedeVolar">
+                                        <option value="">Selecciona una opción</option>
+                                        <option [value]="true">Sí</option>
+                                        <option [value]="false">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo adicional para Gato -->
+                                <div *ngIf="isGato">
+                                    <label for="raza">Raza:</label>
+                                    <input id="raza" formControlName="raza" />
+                                </div>
+                                <div *ngIf="isGato">
+                                    <label for="esDomestico">¿Es doméstico?</label>
+                                    <select id="esDomestico" formControlName="esDomestico">
+                                        <option value="">Selecciona una opción</option>
+                                        <option [value]="true">Sí</option>
+                                        <option [value]="false">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo adicional para Reptil -->
+                                <div *ngIf="isReptil">
+                                    <label for="tipoDeReptil">Tipo de Reptil:</label>
+                                    <input id="tipoDeReptil" formControlName="tipoDeReptil" />
+                                </div>
+                                <div *ngIf="isReptil">
+                                    <label for="esVenenoso">¿Es venenoso?</label>
+                                    <select id="esVenenoso" formControlName="esVenenoso">
+                                        <option value="">Selecciona una opción</option>
+                                        <option [value]="true">Sí</option>
+                                        <option [value]="false">No</option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo adicional para Roedor -->
+                                <div *ngIf="isRoedor">
+                                    <label for="tipoDeRoedor">Tipo de Roedor:</label>
+                                    <input id="tipoDeRoedor" formControlName="tipoDeRoedor" />
+                                </div>
+                                <div *ngIf="isRoedor">
+                                    <label for="esDomesticoRoedor">¿Es doméstico?</label>
+                                    <select id="esDomesticoRoedor" formControlName="esDomestico">
+                                        <option value="">Selecciona una opción</option>
+                                        <option [value]="true">Sí</option>
+                                        <option [value]="false">No</option>
+                                    </select>
+                                </div>
+
+
+                            </label>
+                            <label>
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="text" formControlName="foto" placeholder="Foto" name="dateTratamiento"
+                                    id="dateTratamiento" autocomplete="on">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Guardar Historial" style="background-color: 3ed98f;" id="btn-guardarVet">
+                <div class="alerta-error">Todos los campos son obligatorios - Verifique sus datos</div>
+                <div class="alerta-exito">Tu registro fue exitoso</div>
+            </form>
+        </div>
+    </div>
+</div>

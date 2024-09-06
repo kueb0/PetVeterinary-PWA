@@ -1,0 +1,43 @@
+.btn-solid-reg {
+    cursor: pointer; /* Hace que el cursor parezca clickeable */
+}
+.form-group label {
+    text-align: left;
+    display: block;
+}
+.titulo {
+    display: block;
+    text-align: center;
+    font-size: 24px; /* Opcional: ajusta el tamaño de la fuente */
+    font-weight: bold; /* Opcional: hace que el texto sea negrita */
+}
+
+.btn {
+    font-size: 1rem; /* Tamaño de la fuente del botón */
+    padding: .5rem 1rem; /* Espaciado interno del botón */
+    border-radius: .25rem; /* Bordes redondeados opcionales */
+    justify-content: center;
+}
+.form-group {
+    margin-bottom: 1.5rem; /* Añade espacio debajo de cada grupo de formulario */
+}
+
+.form-group label {
+    display: block; /* Asegura que la etiqueta ocupe toda la línea */
+    margin-bottom: .5rem; /* Espacio entre la etiqueta y el campo de entrada */
+    font-size: 1rem; /* Tamaño de la fuente de la etiqueta */
+    font-weight: 600; /* Opcional: negrita para la etiqueta */
+}
+
+.form-group input {
+    width: 100%; /* Hace que el campo de entrada ocupe todo el ancho del contenedor */
+    padding: .5rem; /* Espaciado dentro del campo de entrada */
+    font-size: 1rem; /* Tamaño de la fuente del campo */
+    border: 1px solid #ced4da; /* Borde del campo de entrada */
+    border-radius: .25rem; /* Bordes redondeados opcionales */
+}
+
+.button-container {
+    text-align: center; /* Centra el botón dentro del contenedor */
+    margin-top: 1.5rem; /* Espacio superior para el botón */
+}

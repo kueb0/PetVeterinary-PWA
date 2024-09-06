@@ -1,0 +1,122 @@
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div class="containerBread" *ngIf="!loader">
+    <a href="Inicio">Inicio</a> / Agendar Cita
+</div>
+
+<div>
+    <div class="container mt-5">
+        <div id="response" class="row">
+            <div class="card">
+                <div class="card-body text-justify">
+                    <span class="titulo">Agendar una Cita</span>
+                    <p></p>
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                id="idCliente"
+                                name="idCliente"
+                                class="form-control"
+                                formControlName="idCliente" 
+                                required
+                                hidden
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="veterinario">Veterinario:</label>
+                            <select
+                                id="veterinario"
+                                name="veterinario"
+                                class="form-control"
+                                formControlName="idVeterinario"
+                                (change)="onVeterinarioChange($event)"
+                                required
+                            >
+                                <option value="" disabled selected>Seleccione un veterinario</option>
+                                <option *ngFor="let veterinario of veterinarios" [value]="veterinario._id">
+                                    {{ veterinario.nombre }}
+                                </option>
+                            </select>
+                        </div>
+                    
+                    
+                        <div class="form-group">
+                            <label for="propietarioNombre">Nombre del propietario:</label>
+                            <input
+                                type="text"
+                                id="propietarioNombre"
+                                name="propietarioNombre"
+                                class="form-control"
+                                formControlName="propietarioNombre" 
+                                required
+                                readonly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mascotaNombre">Nombre de la Mascota:</label>
+                            <input
+                                type="text"
+                                id="mascotaNombre"
+                                name="mascotaNombre"
+                                class="form-control"
+                                formControlName="mascotaNombre" 
+                                required
+                                readonly
+                            />
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="fechaCita">Fecha de la Cita:</label>
+                            <input
+                                type="date"
+                                id="fechaCita"
+                                name="fechaCita"
+                                class="form-control"
+                                formControlName="fecha"
+                                required
+                            />
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="motivoCita">Motivo de la Cita:</label>
+                            <input
+                                type="text"
+                                id="motivoCita"
+                                name="motivoCita"
+                                class="form-control"
+                                formControlName="motivo"
+                                required
+                            />
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="horarioCita">Horario de la Cita:</label>
+                            <select
+                                id="horarioCita"
+                                name="horarioCita"
+                                class="form-control"
+                                formControlName="hora"
+                                required
+                            >
+                                <option value="" disabled selected>Seleccione un horario</option>
+                                <option *ngFor="let horario of horariosDisponibles" [value]="horario.hora">
+                                    {{ horario.hora }}
+                                </option>
+                            </select>
+                        </div>
+                    
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-primary">Agendar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

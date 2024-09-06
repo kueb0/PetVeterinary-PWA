@@ -1,0 +1,18 @@
+<div *ngIf="mascota" class="pet-profile-container">
+    <div class="pet-profile-card">
+        <div class="pet-photo">
+            <img [src]="mascota?.foto" alt="{{ mascota?.nombreMascota }}" class="pet-image">
+        </div>
+        <div class="pet-details">
+            <h2>{{ mascota?.nombreMascota }}</h2>
+            <p><strong>Especie:</strong> {{ mascota?.especie }}</p>
+            <p><strong>Sexo:</strong> {{ mascota?.sexo }}</p>
+            <p><strong>Edad:</strong> {{ mascota?.edad }} años</p>
+            <!-- Agrega más detalles aquí según lo necesario -->
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!mascota" class="loading-container">
+    <p>Cargando información de la mascota...</p>
+</div>
