@@ -18,6 +18,7 @@ const historialClinicoRoutes = require('./routes/historialClinicoRoute');
 app.use(cors({
     origin: "https://petveterinary-app.web.app", // Permite solicitudes desde este origen
     origin: "http://localhost:4200", // Permite solicitudes desde este origen para pruebas locales**
+    origin: "https://veterinaryweb-develop.netlify.app", // Permite solicitudes desde este origen para pruebas locales**
     methods: ["GET", "POST", "PUT", "DELETE"], // Métodos HTTP permitidos
     credentials: true // Permite el envío de credenciales (opcional)
 }));
