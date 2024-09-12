@@ -156,7 +156,7 @@ export class AgendarCitaComponent implements OnInit {
               (error) => {
                 console.error('Si cita ha sido agregada, usted recibira un correo de disponibilidad:', error);
                 this.showCorrectPopup();
-                this.router.navigate(['/citas-confirmadas']);
+                this.router.navigate(['/ClienteSesion']);
 
 
               }
