@@ -154,8 +154,9 @@ export class AgendarCitaComponent implements OnInit {
                 this.router.navigate(['/citas-confirmadas']);
               },
               (error) => {
-                console.error('Error al actualizar la disponibilidad:', error);
-                this.showErrorPopup();
+                console.error('Si cita ha sido agregada, usted recibira un correo de disponibilidad:', error);
+                this.showCorrectPopup();
+
               }
             );
           },
