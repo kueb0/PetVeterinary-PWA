@@ -43,7 +43,7 @@ export class AgregarMascotaComponent {
     // Obtener el ID del cliente desde el servicio de autenticación
     //this.mascota.idCliente = this.authService.getClienteId(); 
 
-    const url = 'http://localhost:3000/api/mascota'; // URL de tu backend
+    const url = 'https://veterinaria-backend-gx0i.onrender.com/api/mascota'; // URL de tu backend
     this.http.post(url, this.mascota).subscribe(
       response => {
         console.log('Mascota guardada:', response);

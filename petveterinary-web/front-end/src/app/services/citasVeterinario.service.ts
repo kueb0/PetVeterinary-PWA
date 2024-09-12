@@ -9,7 +9,7 @@ import { Mascota } from '../models/mascota';
   providedIn: 'root'
 })
 export class CitasVeterinarioService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://veterinaria-backend-gx0i.onrender.com/api';
 
   constructor(private http: HttpClient) { }
 

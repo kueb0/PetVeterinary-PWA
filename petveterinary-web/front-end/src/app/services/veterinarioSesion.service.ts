@@ -15,7 +15,7 @@ export class VeterinarioSesionService {
     router = inject(Router);
 
     constructor(private http: HttpClient) {
-        this.baseUrl = 'http://localhost:3000/api'; // Asegúrate de que esta URL sea correcta
+        this.baseUrl = 'https://veterinaria-backend-gx0i.onrender.com/api'; // Asegúrate de que esta URL sea correcta
     }
 
     registrarVeterinario(formValue: any): Observable<any> {

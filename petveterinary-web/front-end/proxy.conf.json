@@ -1,6 +1,7 @@
 {
     "/api": {
-        "target": "http://localhost:3000",
+        //"target": "http://localhost:3000",
+        "target": "https://veterinaria-backend-gx0i.onrender.com",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true

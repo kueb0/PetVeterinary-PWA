@@ -14,7 +14,7 @@ export class ClienteService {
 
 
     constructor(private http: HttpClient) {
-        this.baseUrl = 'http://localhost:3000/api'
+        this.baseUrl = 'https://veterinaria-backend-gx0i.onrender.com/api'
     }
 
     registrarCliente(formValue: any) {
