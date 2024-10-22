@@ -14,7 +14,7 @@ export class MascotaService {
 
 
     constructor(private http: HttpClient) {
-        this.baseUrl = 'https://veterinaria-backend-gx0i.onrender.com/api'
+        this.baseUrl = 'http://localhost:3000/api'
     }
 
     registrarMascota(formValue: any) {
