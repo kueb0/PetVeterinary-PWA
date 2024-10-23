@@ -47,6 +47,26 @@
       <!-- end of col -->
     </div>
     <!-- end of row -->
+
+    <h3 style="text-align: center;">Conoce nuestro centro de atención veterinaria ubicado en:</h3>
+    <p style="text-align: center;">Avenida Jose Alfredo Jimenez #49, Dolores Hidalgo, Gto.</p>
+
+              <google-map style="text-align: center;" height="450px"
+                          width="1000px"
+                          [center]="center"
+                          [zoom]="zoom"
+                          (mapClick)="moveMap($event)"
+                          (mapMousemove)="move($event)"
+              >
+              <map-marker *ngFor="let position of markerPositions"
+                          [position]="position"
+                          [options]="{ title: 'Ubicación específica' }"
+                          >
+                          </map-marker>
+              </google-map>
+
+              <div> Latitude: {{display?.lat}}</div>
+              <div> Longitude: {{display?.lng}}</div>
   </div>
   <!-- end of container -->
   

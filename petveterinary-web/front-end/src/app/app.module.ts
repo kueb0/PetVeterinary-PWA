@@ -31,6 +31,8 @@ import { ClienteSesionComponent } from './components/vistas/cliente-sesion/clien
 import { PerfilMascotaComponent } from './components/vistas/perfil-mascota/perfil-mascota.component';
 import { VeterinarioSesionComponent } from './components/vistas/veterinario-sesion/veterinario-sesion.component';
 import { AgendarCitaComponent } from './components/formularios/agendarcita/agendarcita.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { AgendarCitaComponent } from './components/formularios/agendarcita/agend
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    GoogleMapsModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}],
   bootstrap: [AppComponent]
